@@ -1,0 +1,31 @@
+//VelociraptorClawKeyRack
+
+translate([20,41,15]) rotate([294,0,295]) import("/Users/joerutherford/Desktop/3D/Velociraptor_dinosaur_claw/VelociraptorClawSTL.stl");
+
+translate([85,41,15]) rotate([294,0,295]) import("/Users/joerutherford/Desktop/3D/Velociraptor_dinosaur_claw/VelociraptorClawSTL.stl");
+
+translate([150,41,15]) rotate([294,0,295]) import("/Users/joerutherford/Desktop/3D/Velociraptor_dinosaur_claw/VelociraptorClawSTL.stl");
+
+translate([215,41,15]) rotate([294,0,295]) import("/Users/joerutherford/Desktop/3D/Velociraptor_dinosaur_claw/VelociraptorClawSTL.stl");
+
+translate([280,41,15]) rotate([294,0,295]) import("/Users/joerutherford/Desktop/3D/Velociraptor_dinosaur_claw/VelociraptorClawSTL.stl");
+
+LetterBlock("HOME SWEET HOME");
+module LetterBlock(letter, size=28) {
+    difference() {
+        rotate([270,180,0]) translate([-150,35,3]) cube([300,60,7], center=true);
+		
+	translate([292,10,58]) rotate([90,0,0]) cylinder(h =25, r=1.5);
+translate([8,10,58]) rotate([90,0,0]) cylinder(h =25, r=1.5);
+        rotate([270,180,0]) translate([-150,48,size/6]) {
+            linear_extrude(height=size, convexity=4)
+                text(letter, 
+                     size=size*22/30,
+                     font="Gill Sans",
+                     halign="center",
+                     valign="center");
+        }
+    }
+}
+
+echo(version=version());
